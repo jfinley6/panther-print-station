@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Panther Print Station</title>
+  </head>
+  <body>
+    <div class="flex flex-col h-screen">
+      <!-- Navbar with logo -->
+      <nav
+        class="bg-white pl-2 flex justify-between items-center border-2 border-t-2 border-black"
+      >
+        <div class="flex items-center">
+          <img class="h-6 md:h-8 md:h-10" src="./assets/pm-logo-panther.svg" />
+          <p class="font-bold md:text-3xl text-sm text-[#1c2b3a]">
+            Print Station
+          </p>
+        </div>
+        <ul class="flex justify-end w-[50%] h-[100%] nav-list">
+          <li class="w-[33%] hover:text-white hover:bg-[#171b60]">
+            <a
+              class="w-[100%] inline-block border-l-2 border-black py-4 px-4 text-sm font-medium text-center active"
+            >
+              Serial Numbers
+            </a>
+          </li>
+          <li
+            class="w-[33%] border-x-2 border-black flex items-center hover:text-white hover:bg-[#171b60]"
+          >
+            <a
+              href="#2"
+              class="w-[100%] inline-block py-4 px-4 text-sm font-medium text-center"
+            >
+              Toe Tags
+            </a>
+          </li>
+          <li
+            class="w-[33%] border-black flex items-center hover:text-white hover:bg-[#171b60]"
+          >
+            <a
+              href="#3"
+              class="w-[100%] inline-block py-4 px-4 text-sm font-medium text-center"
+              >Crates</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div
+        id="serial_number"
+        class="bg-green-400 flex justify-center items-center grow border-b-2 border-x-2 border-black"
+      >
+        <div
+          class="grow text-center border-r-2 border-black h-full flex items-center justify-center"
+        >
+          left
+        </div>
+        <div class="grow text-center">right</div>
+      </div>
+    </div>
+  </body>
+</html>
