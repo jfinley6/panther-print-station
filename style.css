@@ -23,7 +23,7 @@
 img {
   height: 10vh;
 }
-.active {
+#active {
   border-top: 4px solid #171b60;
   border-bottom: 4px solid #171b60;
 }
@@ -70,14 +70,19 @@ img {
   }
   #serial-number-print-form {
     border-right-width: 2px;
+    border-bottom-width: 0px;
     border-color: #000000;
   }
 }
 
 #serial-numbers {
-    display: none;
+  display: flex;
 }
 
 #toe-tags {
-    display: flex
+  display: none;
+}
+
+#crate-tags {
+  display: none;
 }

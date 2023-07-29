@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css"
       rel="stylesheet"
@@ -28,28 +29,30 @@
         </div>
         <ul class="flex justify-end w-[50%] h-[100%] nav-list">
           <li
-            class="w-[27%] flex items-center hover:border-y-4 border-[#171b60] active"
+            id="active"
+            class="w-[30%] flex items-center hover:border-y-4 border-[#171b60]"
           >
             <button
+              id="serial-numbers-nav"
+              onclick="return show_page(this.id,this.parentNode)"
               class="w-[100%] inline-block py-4 px-4 text-xs md:text-sm font-medium text-center"
             >
               Serial Numbers
             </button>
           </li>
-          <li
-            class="w-[27%] flex items-center hover:border-y-4 border-[#171b60]"
-          >
+          <li class="w-[30%] flex items-center hover:border-y-4 border-[#171b60]">
             <button
+              id="toe-tags-nav"
+              onclick="return show_page(this.id, this.parentNode)"
               class="w-[100%] inline-block py-4 px-4 text-xs md:text-sm font-medium text-center"
             >
               Toe Tags
             </button>
           </li>
-          <li
-            class="w-[27%] flex items-center hover:border-y-4 border-[#171b60]"
-          >
+          <li class="w-[30%] flex items-center hover:border-y-4 border-[#171b60]">
             <button
-              href="#3"
+              id="crate-tags-nav"
+              onclick="return show_page(this.id, this.parentNode)"
               class="w-[100%] inline-block py-4 px-4 text-xs md:text-sm font-medium text-center"
             >
               Crates
@@ -125,6 +128,7 @@
         </div>
       </div>
       <div id="toe-tags" class="main-component">Toe Tags</div>
+      <div id="crate-tags" class="main-component">Crate Tags</div>
     </div>
   </body>
 </html>
