@@ -5,60 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css"
+      rel="stylesheet"
+    />
     <title>Panther Print Station</title>
   </head>
   <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
     <div class="flex flex-col h-screen">
       <!-- Navbar with logo -->
       <nav
-        class="bg-white pl-2 flex justify-between items-center border-2 border-t-2 border-black"
+        class="h-[10%] bg-white pl-2 flex justify-between items-center border-black"
       >
         <div class="flex items-center">
           <img class="h-6 md:h-8 md:h-10" src="./assets/pm-logo-panther.svg" />
-          <p class="font-bold md:text-3xl text-sm text-[#1c2b3a]">
+          <p
+            class="hover:cursor-default font-bold md:text-3xl text-sm text-[#1c2b3a]"
+          >
             Print Station
           </p>
         </div>
         <ul class="flex justify-end w-[50%] h-[100%] nav-list">
-          <li class="w-[33%] hover:text-white hover:bg-[#171b60]">
-            <a
-              class="w-[100%] inline-block border-l-2 border-black py-4 px-4 text-sm font-medium text-center active"
+          <li
+            class="w-[27%] flex items-center hover:border-y-4 border-[#171b60] active"
+          >
+            <button
+              class="w-[100%] inline-block py-4 px-4 text-xs md:text-sm font-medium text-center"
             >
               Serial Numbers
-            </a>
+            </button>
           </li>
           <li
-            class="w-[33%] border-x-2 border-black flex items-center hover:text-white hover:bg-[#171b60]"
+            class="w-[27%] flex items-center hover:border-y-4 border-[#171b60]"
           >
-            <a
-              href="#2"
-              class="w-[100%] inline-block py-4 px-4 text-sm font-medium text-center"
+            <button
+              class="w-[100%] inline-block py-4 px-4 text-xs md:text-sm font-medium text-center"
             >
               Toe Tags
-            </a>
+            </button>
           </li>
           <li
-            class="w-[33%] border-black flex items-center hover:text-white hover:bg-[#171b60]"
+            class="w-[27%] flex items-center hover:border-y-4 border-[#171b60]"
           >
-            <a
+            <button
               href="#3"
-              class="w-[100%] inline-block py-4 px-4 text-sm font-medium text-center"
-              >Crates</a
+              class="w-[100%] inline-block py-4 px-4 text-xs md:text-sm font-medium text-center"
             >
+              Crates
+            </button>
           </li>
         </ul>
       </nav>
-      <div
-        id="serial_number"
-        class="bg-green-400 flex justify-center items-center grow border-b-2 border-x-2 border-black"
-      >
-        <div
-          class="grow text-center border-r-2 border-black h-full flex items-center justify-center"
-        >
-          left
+      <!-- Serial Number Tag Component -->
+      <div id="serial-numbers" class="main-component">
+        <div id="serial-number-print-form">left</div>
+        <div id="serial-number-firmwares">
+          right
+          <div>
+            <!-- <button
+              id="dropdownDefaultButton"
+              data-dropdown-toggle="dropdown"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              type="button"
+            >
+              Panther Straight Tamp WAGO
+              <svg
+                class="w-2.5 h-2.5 ml-2.5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button> -->
+            <!-- Dropdown menu -->
+            <!-- <div
+              id="dropdown"
+              class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+            >
+              <ul
+                class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                aria-labelledby="dropdownDefaultButton"
+              >
+                <li>
+                  <p href="#" class="block px-4 py-2">Dashboard</p>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Settings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Earnings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Sign out</a
+                  >
+                </li>
+              </ul>
+            </div> -->
+          </div>
         </div>
-        <div class="grow text-center">right</div>
       </div>
+      <div id="toe-tags" class="main-component">Toe Tags</div>
     </div>
   </body>
 </html>

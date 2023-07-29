@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-    --main-blue: #171b60;
+  --main-blue: #171b60;
 }
 
 @media (min-width: 768px) {
@@ -21,13 +21,63 @@
   color: #35bdff;
 }
 img {
-    height: 10vh;
+  height: 10vh;
 }
 .active {
-    border-top: 4px solid #171b60;
-    border-bottom: 4px solid #171b60;
+  border-top: 4px solid #171b60;
+  border-bottom: 4px solid #171b60;
 }
 .nav-list > li {
-    height: 100%;
-    transition: all .2s ease-in-out;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.main-component {
+  background: #009a76;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+#serial-number-print-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  border-bottom-width: 2px;
+  border-color: #000000;
+}
+
+#serial-number-firmwares {
+  display: flex;
+  overflow: scroll;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .main-component {
+    flex-direction: row;
+  }
+  #serial-number-print-form {
+    border-right-width: 2px;
+    border-color: #000000;
+  }
+}
+
+#serial-numbers {
+    display: none;
+}
+
+#toe-tags {
+    display: flex
 }
