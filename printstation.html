@@ -14,46 +14,37 @@
   </head>
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
-    <div class="flex flex-col h-screen">
+    <div class="page-container">
       <!-- Navbar with logo -->
-      <nav
-        class="h-[10%] bg-white pl-2 flex justify-between items-center border-black"
-      >
-        <div class="flex items-center">
-          <img class="h-6 md:h-8 md:h-10" src="./assets/pm-logo-panther.svg" />
-          <p
-            class="hover:cursor-default font-bold md:text-3xl text-sm text-[#1c2b3a]"
-          >
-            Print Station
-          </p>
+      <nav class="navbar-wrapper">
+        <div class="navbar-content">
+          <img class="navbar-img" src="./assets/pm-logo-panther.svg" />
+          <p class="navbar-title">Print Station</p>
         </div>
-        <ul class="flex justify-end w-[50%] h-[100%] nav-list">
-          <li
-            id="active"
-            class="w-[30%] flex items-center hover:border-y-4 border-[#171b60]"
-          >
+        <ul class="navbar-list">
+          <li id="active" class="navbar-list-item">
             <button
               id="serial-numbers-nav"
               onclick="return show_page(this.id,this.parentNode)"
-              class="w-[100%] flex justify-center whitespace-nowrap inline-block py-4 px-4 text-xs md:text-sm font-medium text-center"
+              class="navbar-button"
             >
               Serial Numbers
             </button>
           </li>
-          <li class="w-[30%] flex items-center hover:border-y-4 border-[#171b60]">
+          <li class="navbar-list-item">
             <button
               id="toe-tags-nav"
               onclick="return show_page(this.id, this.parentNode)"
-              class="w-[100%] inline-block py-4 px-4 text-xs md:text-sm font-medium text-center"
+              class="navbar-button"
             >
               Toe Tags
             </button>
           </li>
-          <li class="w-[30%] flex items-center hover:border-y-4 border-[#171b60]">
+          <li class="navbar-list-item">
             <button
               id="crate-tags-nav"
               onclick="return show_page(this.id, this.parentNode)"
-              class="w-[100%] inline-block py-4 px-4 text-xs md:text-sm font-medium text-center"
+              class="navbar-button"
             >
               Crates
             </button>

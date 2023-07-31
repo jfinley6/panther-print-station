@@ -6,14 +6,103 @@
   --main-blue: #171b60;
 }
 
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* navbar styles */
+
+.navbar-wrapper {
+  display: flex;
+  padding-left: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  border-color: #000000;
+  background-color: #ffffff;
+  height: 10%;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-img {
+  height: 1.5rem;
+}
+
+.navbar-title {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: #1c2b3a;
+}
+
+.navbar-title:hover {
+  cursor: default;
+}
+
+.navbar-list {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  height: 100%;
+}
+
+.navbar-list-item {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  border-color: #171b60;
+}
+
+.navbar-list-item:hover {
+  border-top-width: 4px;
+  border-bottom-width: 4px;
+}
+
+.navbar-button {
+  display: inline-block;
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  justify-content: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .navbar-img {
+    height: 2.5rem;
+  }
+  .navbar-title {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  .navbar-button {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
 #active {
   border-top: 4px solid #171b60;
   border-bottom: 4px solid #171b60;
 }
-.nav-list > li {
+.navbar-list > li {
   height: 100%;
   transition: all 0.2s ease-in-out;
 }
+
+/* Outer Wrapper that wraps around the three components */
 
 .main-component {
   background: #009a76;
@@ -63,9 +152,13 @@
   display: flex;
 }
 
+/* Toe Tags Component */
+
 #toe-tags {
   display: none;
 }
+
+/* Crate Tags Component */
 
 #crate-tags {
   display: none;
