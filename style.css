@@ -87,14 +87,12 @@
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
-  
 }
 @media (max-width: 768px) {
   .navbar-button {
     font-size: 0.675rem;
     line-height: 1.25rem;
   }
-  
 }
 
 #active {
@@ -141,7 +139,7 @@
 
 .print-form-container {
   width: 100%;
-  max-width: 20rem;
+  max-width: 25rem;
 }
 
 .print-form {
@@ -182,7 +180,8 @@
   background-color: #f9fafb;
 }
 
-.print-button, .preview-button {
+.print-button,
+.preview-button {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
@@ -194,15 +193,72 @@
   width: 40%;
 }
 
-.print-button:hover, .preview-button:hover {
+.print-button:hover,
+.preview-button:hover {
   background-color: #1d4ed8;
+  cursor: pointer;
 }
 
 .form-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  margin-top: 1rem;
 }
+
+.options-list {
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: #e5e7eb;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: #111827;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.options-list-item {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-width: 1px;
+  border-color: #e5e7eb;
+  width: 100%;
+}
+
+.options-list-item-content {
+  display: flex;
+  align-items: center;
+  padding-left: 0.75rem;
+}
+
+.options-label {
+  display: flex;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  margin-left: 1rem;
+  width: 100%;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: #111827;
+  user-select: none;
+}
+
+.options-label:hover,
+#autoheight-checkbox {
+  cursor: pointer;
+}
+
+.options-input {
+  border-radius: 0.25rem;
+  border-color: #d1d5db;
+  width: 1rem;
+  height: 1rem;
+  color: #2563eb;
+  background-color: #f3f4f6;
+}
+
 /* Styles for firmware section */
 
 #serial-number-firmwares {
