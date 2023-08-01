@@ -53,7 +53,34 @@
       </nav>
       <!-- Serial Number Tag Component -->
       <div id="serial-numbers" class="main-component">
-        <div id="serial-number-print-form">left</div>
+        <div id="serial-number-print-form">
+          <p class="print-form-title">Enter Information Below</p>
+          <div class="print-form-container">
+            <form class="print-form">
+              <div class="field-margin">
+                <label class="label" for="panther-model-selection">
+                  Panther Model
+                </label>
+                <select id="panther-model-selection" class="model-selection">
+                  <option selected value="Predator_WAGO">
+                    Predator (WAGO)
+                  </option>
+                  <option value="Predator_BEIJER">Predator (BEIJER)</option>
+                  <option value="Predator_Swing">Predator Swing</option>
+                  <option value="Phantom">Phantom</option>
+                  <option value="FLEX">FLEX</option>
+                  <option value="P5c">P5c</option>
+                  <option value="Shadow">Shadow</option>
+                  <option value="Servo_Stand">Servo Stand</option>
+                </select>
+              </div>
+              <div class="form-buttons">
+                <button class="print-button">Print</button>
+                <button class="preview-button">Preview</button>
+              </div>
+            </form>
+          </div>
+        </div>
         <div id="serial-number-firmwares">
           right
           <div>
@@ -118,7 +145,9 @@
           </div>
         </div>
       </div>
+      <!-- Production Toe Tags Component -->
       <div id="toe-tags" class="main-component">Toe Tags</div>
+      <!-- Crate Tags Component -->
       <div id="crate-tags" class="main-component">Crate Tags</div>
     </div>
   </body>
