@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
     <title>Panther Print Station</title>
   </head>
+
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
     <div class="page-container">
@@ -23,29 +22,17 @@
         </div>
         <ul class="navbar-list">
           <li id="active" class="navbar-list-item">
-            <button
-              id="serial-numbers-nav"
-              onclick="return show_page(this.id,this.parentNode)"
-              class="navbar-button"
-            >
+            <button id="serial-numbers-nav" onclick="return show_page(this.id,this.parentNode)" class="navbar-button">
               Serial Numbers
             </button>
           </li>
           <li class="navbar-list-item">
-            <button
-              id="toe-tags-nav"
-              onclick="return show_page(this.id, this.parentNode)"
-              class="navbar-button"
-            >
+            <button id="toe-tags-nav" onclick="return show_page(this.id, this.parentNode)" class="navbar-button">
               Toe Tags
             </button>
           </li>
           <li class="navbar-list-item">
-            <button
-              id="crate-tags-nav"
-              onclick="return show_page(this.id, this.parentNode)"
-              class="navbar-button"
-            >
+            <button id="crate-tags-nav" onclick="return show_page(this.id, this.parentNode)" class="navbar-button">
               Crates
             </button>
           </li>
@@ -74,9 +61,27 @@
                   <option value="Servo_Stand">Servo Stand</option>
                 </select>
               </div>
+              <div class="field-margin">
+                <label class="label">Options</label>
+                <ul class="options-list">
+                  <li class="options-list-item">
+                    <div class="options-list-item-content">
+                      <input id="autoheight-checkbox" type="checkbox" class="options-input" />
+                      <label for="autoheight-checkbox" class="options-label">Auto Height Compensation</label>
+                    </div>
+                  </li>
+                  <li class="options-list-item">
+                    <div class="flex items-center pl-3">
+                      <input id="expansion-checkbox" type="checkbox" class="options-input" />
+                      <label for="expansion-checkbox" class="options-label">Expansion PLC</label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
               <div class="form-buttons">
-                <button class="print-button">Print</button>
-                <button class="preview-button">Preview</button>
+                <p class="print-button">Print</p>
+                <p class="preview-button">Preview</p>
               </div>
             </form>
           </div>
@@ -151,4 +156,5 @@
       <div id="crate-tags" class="main-component">Crate Tags</div>
     </div>
   </body>
+
 </html>
