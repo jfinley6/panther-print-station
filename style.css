@@ -130,7 +130,7 @@
   border-color: #000000;
 }
 
-.print-form-title {
+.print-form-title, .firmware-title {
   font-size: 2rem;
   font-weight: bold;
   margin-top: 15px;
@@ -265,7 +265,7 @@
   display: flex;
   overflow: scroll;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   height: 100%;
   text-align: center;
