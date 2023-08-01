@@ -71,7 +71,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 1.2rem;
   line-height: 1rem;
   font-weight: 500;
   text-align: center;
@@ -87,10 +87,14 @@
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
+  
+}
+@media (max-width: 768px) {
   .navbar-button {
-    font-size: 0.875rem;
+    font-size: 0.675rem;
     line-height: 1.25rem;
   }
+  
 }
 
 #active {
@@ -114,9 +118,12 @@
   flex-grow: 1;
 }
 
+/* Styles for Serial Number Print Form */
+
 #serial-number-print-form {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  flex-direction: column;
   align-items: center;
   height: 100%;
   text-align: center;
@@ -124,6 +131,79 @@
   border-bottom-width: 2px;
   border-color: #000000;
 }
+
+.print-form-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.print-form-container {
+  width: 100%;
+  max-width: 20rem;
+}
+
+.print-form {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.field-margin {
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+.model-selection {
+  display: block;
+  padding: 0.625rem;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: #d1d5db;
+  width: 100%;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #111827;
+  background-color: #f9fafb;
+}
+
+.print-button, .preview-button {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #3b82f6;
+  width: 40%;
+}
+
+.print-button:hover, .preview-button:hover {
+  background-color: #1d4ed8;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/* Styles for firmware section */
 
 #serial-number-firmwares {
   display: flex;
