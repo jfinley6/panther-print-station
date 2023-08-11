@@ -21,7 +21,7 @@
   align-items: center;
   border-color: #000000;
   background-color: #ffffff;
-  height: 10%;
+  min-height: 10%;
 }
 
 .navbar-content {
@@ -108,12 +108,50 @@
 
 .main-component {
   background: #009a76;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+}
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  width: 100%;
+  min-height: fit-content;
+  background-color: #009a76;
+  border-bottom: 2px solid black;
+}
+
+@media (min-width: 768px) {
+  .container-form {
+    float: left;
+    height: 100%;
+    width: 50%;
+    border-right: 2px solid black;
+    border-bottom: 0px;
+  }
+}
+
+.container-firmwares {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  min-height: fit-content;
+  background-color: #009a76;
+}
+@media (min-width: 768px) {
+  .container-firmwares {
+    float: right;
+    align-items: start;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+  }
 }
 
 /* Styles for Serial Number Print Form */
@@ -130,7 +168,8 @@
   border-color: #000000;
 }
 
-.print-form-title, .firmware-title {
+.print-form-title,
+.firmware-title {
   font-size: 2rem;
   font-weight: bold;
   margin-top: 15px;
@@ -139,7 +178,7 @@
 
 .print-form-container {
   width: 100%;
-  max-width: 25rem;
+  max-width: 30rem;
 }
 
 .print-form {
@@ -152,16 +191,18 @@
   background-color: #ffffff;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow-y: scroll;
+  max-height: 65vh;
 }
 
 .field-margin {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .label {
   display: block;
   margin-bottom: 0.5rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.25rem;
   font-weight: 700;
   color: #374151;
@@ -189,8 +230,11 @@
   border-radius: 0.25rem;
   font-weight: 700;
   color: #ffffff;
-  background-color: #3b82f6;
+  background-color: var(--main-blue); 
   width: 40%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .print-button:hover,
@@ -211,17 +255,19 @@
   border-width: 1px;
   border-color: #e5e7eb;
   font-size: 0.875rem;
-  line-height: 1.25rem;
+  line-height: 1rem;
   font-weight: 500;
   color: #111827;
   background-color: #ffffff;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .options-list-item {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-  border-bottom-width: 1px;
+  /* border-bottom-width: 1px; */
   border-color: #e5e7eb;
   width: 100%;
 }
@@ -234,14 +280,14 @@
 
 .options-label {
   display: flex;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
   margin-left: 1rem;
   width: 100%;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
-  color: #111827;
+  color: #626c7f;
   user-select: none;
 }
 
@@ -257,6 +303,25 @@
   height: 1rem;
   color: #2563eb;
   background-color: #f3f4f6;
+}
+
+input,
+select {
+  display: block;
+  padding: 0.425rem !important;
+  border-radius: 0.5rem !important;
+  border-width: 1px;
+  border-color: #d1d5db !important;
+  width: 100%;
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+  color: #626c7f !important;
+}
+
+input:focus,
+select:focus {
+  border-color: #3b82f6 !important;
+  --tw-ring-color: #3b82f6 !important;
 }
 
 /* Styles for firmware section */
