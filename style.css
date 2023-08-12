@@ -231,7 +231,7 @@
   border-radius: 0.25rem;
   font-weight: 700;
   color: #ffffff;
-  background-color: var(--main-blue); 
+  background-color: var(--main-blue);
   width: 40%;
   margin-bottom: 1.5rem;
   display: flex;
@@ -305,8 +305,12 @@
   border-color: #d1d5db;
   width: 1rem;
   height: 1rem;
-  color: #2563eb;
+  color: #2563eb !important;
   background-color: #f3f4f6;
+}
+
+.options-input:focus {
+  --tw-ring-color: transparent !important;
 }
 
 input,
