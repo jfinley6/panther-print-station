@@ -11,3 +11,7 @@ function show_page(clicked_button, parentElement) {
   }
   return false;
 }
+
+function get_zpl() {
+  
+}
