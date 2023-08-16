@@ -267,6 +267,8 @@
   display: flex;
   align-items: center;
   height: 3rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .options-list-item {
@@ -281,14 +283,13 @@
 .options-list-item-content {
   display: flex;
   align-items: center;
-  padding-left: 0.75rem;
 }
 
 .options-label {
   display: flex;
   padding-top: 0.55rem;
   padding-bottom: 0.55rem;
-  margin-left: 0.5rem;
+  padding-left: 1rem;
   width: 100%;
   font-size: 0.875rem;
   font-weight: 500;
@@ -299,7 +300,8 @@
 }
 
 .options-label:hover,
-#autoheight-checkbox {
+#autoheight-checkbox,
+#expansion-checkbox {
   cursor: pointer;
 }
 
