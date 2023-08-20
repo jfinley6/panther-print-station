@@ -269,6 +269,7 @@
   height: 3rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+  gap: 0.9em;
 }
 
 .options-list-item {
@@ -289,7 +290,7 @@
   display: flex;
   padding-top: 0.55rem;
   padding-bottom: 0.55rem;
-  padding-left: 1rem;
+  padding-left: 0.6rem;
   width: 100%;
   font-size: 0.875rem;
   font-weight: 500;
@@ -297,6 +298,7 @@
   user-select: none;
   height: 100%;
   align-items: center;
+  white-space: nowrap;
 }
 
 .options-label:hover,
