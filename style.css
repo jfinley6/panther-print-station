@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: 'Outfit', sans-serif;
+}
+
 :root {
   --main-blue: #171b60;
 }
