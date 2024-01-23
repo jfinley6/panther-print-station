@@ -109,6 +109,10 @@ select {
     height: 1.25em;
 }
 
+.form-check-number::selection {
+  background-color: transparent;
+}
+
 .form-control {
     font-weight: bold;
 }
