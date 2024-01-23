@@ -1,0 +1,131 @@
+html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "Tahoma";
+      }
+
+      .input-wrap {
+        position: relative;
+        display: inline-block;
+      }
+
+      h2 {
+        margin-bottom: 5px;
+        font-size: 45px;
+      }
+
+      h4 {
+        margin-top: 10px;
+        margin-bottom: 0px;
+        font-weight: bold;
+        text-align: center;
+        font-size: 1.5em;
+      }
+
+      hr {
+        border: 1px solid black;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      form {
+        width: 55vw;
+      }
+
+      @media (width < 1290px) {
+        form {
+          width: 90vw;
+        }
+
+        .form-group > label {
+          font-size: 0.9em !important;
+        }
+      }
+
+      label {
+        margin-top: 2px;
+        margin-bottom: 2px;
+        font-weight: 600;
+      }
+
+      .form-group > label {
+        font-size: 1.1em;
+      }
+
+      input::placeholder {
+        opacity: 0.7 !important;
+        font-weight: 550;
+      }
+
+      button {
+        margin-top: 10px;
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      input,
+      select {
+        height: 30px;
+      }
+
+      .form-select {
+        padding: 0;
+        padding-left: 0.75rem;
+        font-weight: 550;
+      }
+
+      .form-check-label {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+
+      .form-check-input {
+        width: 25px;
+        margin-right: 5px;
+      }
+
+      .form-check-number {
+        width: 45px;
+        font-weight: bold;
+        height: 1.25em;
+      }
+
+      .form-control {
+        font-weight: bold;
+      }
+
+      .form-check {
+        position: relative;
+        height: 255px;
+        display: flex;
+        gap: 15px;
+        justify-content: space-evenly;
+      }
+
+      #additional-option {
+        position: absolute;
+        left: 0px;
+        bottom: 110px;
+        width: 100%;
+      }
+
+      #additional-option2 {
+        position: absolute;
+        left: 0;
+        bottom: 60px;
+        width: 100%;
+      }
+
+      button {
+        width: 45%;
+        font-size: 1.3em !important;
+      }
