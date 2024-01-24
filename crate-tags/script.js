@@ -1,3 +1,28 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const ipAddrInput = document.getElementById("ip_addr");
+    const savedOption = localStorage.getItem("selectedOption") || "192.168.17.94";
+
+    ipAddrInput.value = savedOption;
+
+    for (let i = 1; i <= 2; i++) {
+        document.getElementById(`add-option${i}`).addEventListener(
+            "input",
+            () => {
+                if (document.getElementById(`additional-option-${i}-quantity`).value === "0") {
+                    document.getElementById(`additional-option-${i}-quantity`).value = 1;
+                }
+            },
+            { once: true }
+        );
+    }
+});
+
+const savePrinterOption = (e) => {
+    const selectedOption = e.target.value;
+
+    localStorage.setItem("selectedOption", selectedOption);
+};
+
 const resetForm = () => {
     document.getElementById("panther-form").reset();
 };
@@ -7,11 +32,14 @@ const generateOptionZPL = (options, zplObject) => {
     let optionNum = 9;
     let xCoordinate = 305;
     let zplString = `^FS^FB400,1,,L,^CF0,35^FO${xCoordinate},785^A0B^FD`;
-    var additionalOptions1 = document.getElementById("add-option1").value;
-    var additionalOptions2 = document.getElementById("add-option2").value;
+    var additionalOptions1 = document.getElementById("additional-option");
+    var additionalOptions2 = document.getElementById("additional-option2");
     let additionalOptionsArray = [additionalOptions1, additionalOptions2];
 
     for (let i = 0; i < options.length; i++) {
+        if (options[i].getAttribute("data-text-option") === "true") {
+            continue;
+        }
         if (options[i].type === "number" && options[i].value > 0) {
             let optionQuantity = options[i].value;
             let optionName = options[i].name;
@@ -24,8 +52,11 @@ const generateOptionZPL = (options, zplObject) => {
     }
 
     for (let i = 0; i < additionalOptionsArray.length; i++) {
-        if (additionalOptionsArray[i].length > 0) {
-            zplObject[optionNum] = `${zplString}${additionalOptionsArray[i]}`;
+        if (additionalOptionsArray[i].children[1].value.length > 0) {
+            let optionQuantity = additionalOptionsArray[i].children[0].value;
+            let optionName = additionalOptionsArray[i].children[1].value;
+
+            zplObject[optionNum] = `${zplString}(x${optionQuantity}) ${optionName}`;
             xCoordinate += 50;
             zplString = `^FS^FB400,1,,L,^CF0,35^FO${xCoordinate},785^A0B^FD`;
             optionNum += 1;
@@ -44,7 +75,6 @@ const printlabel = () => {
     var system_hand = document.getElementById("system_hand").value;
     var Uncrating_Instructions = document.getElementById("Uncrating_Instructions").checked;
     var options = document.getElementsByClassName("form-check-input");
-    var optionString = "";
     var zplObject = { 9: "", 10: "", 11: "", 12: "", 13: "", 14: "", 15: "", 16: "", 17: "" };
     const fontSize = customer.length > 50 || end_user.length > 50 ? "50" : "60";
 
@@ -66,7 +96,8 @@ const printlabel = () => {
     var sLabelPart14 = "";
     var sLabelPart15 = "";
     var sLabelPart16 = "";
-    var sLabelPart17 = "^FS^FB,2,,R,^CF0,50^FO220,830^A0B^FD^GB560,3,3,B";
+    var sLabelPart17 = "";
+    var sLabelPart18 = "^FS^FB,2,,R,^CF0,50^FO220,830^A0B^FD^GB560,3,3,B";
     var sGraphic;
     var sUncrating;
 
@@ -133,31 +164,32 @@ const printlabel = () => {
             sLabelPart16 +
             zplObject[16] +
             sLabelPart17 +
+            zplObject[17] +
+            sLabelPart18 +
             "^FS^PQ" +
             print_qty +
             ",0,1,Y^XZ";
 
-        console.log(zpl);
-        /*
-          var url = "http://" + ip_addr + "/pstprnt";
-          var method = "POST";
-          var async = true;
-          var request = new XMLHttpRequest();
+        navigator.clipboard.writeText(zpl);
 
-          request.onload = function () {
-            var status = request.status;
-            var data = request.responseText;
-            output.innerHTML = "Status: " + status + "<br>" + data;
-          };
+        // var url = "http://" + ip_addr + "/pstprnt";
+        // var method = "POST";
+        // var async = true;
+        // var request = new XMLHttpRequest();
 
-          request.open(method, url, async);
+        // request.onload = function () {
+        //     var status = request.status;
+        //     var data = request.responseText;
+        //     output.innerHTML = "Status: " + status + "<br>" + data;
+        // };
 
-          request.send(zpl);
-          */
+        // request.open(method, url, async);
+
+        // request.send(zpl);
     }
 
     if (Uncrating_Instructions) {
-        for (let i = 0; i < total_number; i++) {
+        for (var i = 0; i < total_number; i++) {
             var zpl = sUncrating + "^FS^PQ" + print_qty / 2 + ",0,1,Y^XZ";
 
             var url = "http://" + ip_addr + "/pstprnt";
