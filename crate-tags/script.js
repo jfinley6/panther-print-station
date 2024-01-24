@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const ipAddrInput = document.getElementById("ip_addr");
-    const savedOption = localStorage.getItem("selectedOption") || "192.168.17.94";
-
-    ipAddrInput.value = savedOption;
+    getPrinterFromLocalStorage();
 
     for (let i = 1; i <= 2; i++) {
         document.getElementById(`add-option${i}`).addEventListener(
@@ -23,8 +20,16 @@ const savePrinterOption = (e) => {
     localStorage.setItem("selectedOption", selectedOption);
 };
 
+const getPrinterFromLocalStorage = () => {
+    const ipAddrInput = document.getElementById("ip_addr");
+    const savedOption = localStorage.getItem("selectedOption") || "192.168.17.94";
+
+    ipAddrInput.value = savedOption;
+}
+
 const resetForm = () => {
     document.getElementById("panther-form").reset();
+    getPrinterFromLocalStorage();
 };
 
 const generateOptionZPL = (options, zplObject) => {
