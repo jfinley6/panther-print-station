@@ -5,12 +5,29 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById(`add-option${i}`).addEventListener(
             "input",
             () => {
-                if (document.getElementById(`additional-option-${i}-quantity`).value === "0") {
+                if (document.getElementById(`add-option${i}`).value.length > 0) {
                     document.getElementById(`additional-option-${i}-quantity`).value = 1;
                 }
             },
             { once: true }
         );
+    }
+
+    for (let i = 1; i <= 2; i++) {
+        document.getElementById(`add-option${i}`).addEventListener("input", () => {
+            if (document.getElementById(`add-option${i}`).value.length === 0) {
+                document.getElementById(`additional-option-${i}-quantity`).value = 0;
+                document.getElementById(`add-option${i}`).addEventListener(
+                    "input",
+                    () => {
+                        if (document.getElementById(`add-option${i}`).value.length > 0) {
+                            document.getElementById(`additional-option-${i}-quantity`).value = 1;
+                        }
+                    },
+                    { once: true }
+                );
+            }
+        });
     }
 });
 
@@ -25,7 +42,7 @@ const getPrinterFromLocalStorage = () => {
     const savedOption = localStorage.getItem("selectedOption") || "192.168.17.94";
 
     ipAddrInput.value = savedOption;
-}
+};
 
 const resetForm = () => {
     document.getElementById("panther-form").reset();
