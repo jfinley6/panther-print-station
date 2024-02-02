@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (let i = 1; i <= 2; i++) {
         document.getElementById(`add-option${i}`).addEventListener(
-            "input",
+            "keyup",
             () => {
                 if (document.getElementById(`add-option${i}`).value.length > 0) {
                     document.getElementById(`additional-option-${i}-quantity`).value = 1;
@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     for (let i = 1; i <= 2; i++) {
-        document.getElementById(`add-option${i}`).addEventListener("input", () => {
+        document.getElementById(`add-option${i}`).addEventListener("keyup", () => {
             if (document.getElementById(`add-option${i}`).value.length === 0) {
                 document.getElementById(`additional-option-${i}-quantity`).value = 0;
                 document.getElementById(`add-option${i}`).addEventListener(
-                    "input",
+                    "keyup",
                     () => {
                         if (document.getElementById(`add-option${i}`).value.length > 0) {
                             document.getElementById(`additional-option-${i}-quantity`).value = 1;
@@ -42,6 +42,7 @@ const getPrinterFromLocalStorage = () => {
     const savedOption = localStorage.getItem("selectedOption") || "192.168.17.94";
 
     ipAddrInput.value = savedOption;
+    document.body.classList.remove("display-none");
 };
 
 const resetForm = () => {
