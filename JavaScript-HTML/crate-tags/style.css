@@ -4,6 +4,10 @@ body {
     padding: 0;
 }
 
+.display-none {
+    display: none;
+}
+
 body {
     display: flex;
     flex-direction: column;
