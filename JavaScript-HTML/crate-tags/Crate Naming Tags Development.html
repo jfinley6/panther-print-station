@@ -21,7 +21,7 @@
         <title>Crate Tags</title>
     </head>
 
-    <body style="background-color: limegreen">
+    <body style="background-color: limegreen" class="display-none">
         <!-- Header -->
         <div style="display: flex; align-items: center; margin-top: 20px; margin-bottom: 20px">
             <img
@@ -101,7 +101,7 @@
                             aria-describedby="totalNumber"
                             placeholder="Enter Number of Crates"
                             autocomplete="off"
-							required
+                            required
                         />
                     </div>
                     <div class="form-group">
@@ -261,7 +261,7 @@
                                     type="number"
                                     value="0"
                                     data-option="true"
-									data-text-option="true"
+                                    data-text-option="true"
                                     id="additional-option-1-quantity"
                                     name="additional-option-1-quantity"
                                     min="0"
@@ -282,7 +282,7 @@
                                     type="number"
                                     value="0"
                                     data-option="true"
-									data-text-option="true"
+                                    data-text-option="true"
                                     id="additional-option-2-quantity"
                                     name="additional-option-2-quantity"
                                     min="0"
@@ -299,9 +299,7 @@
                             </div>
                         </div>
                         <div style="position: absolute; bottom: 0; right: 0; left: 0; text-align: center">
-                            <button type="submit" class="btn btn-primary">
-                                Print
-                            </button>
+                            <button type="submit" class="btn btn-primary">Print</button>
                             <button type="button" class="btn btn-primary" onclick="resetForm(); return false;">
                                 Reset
                             </button>
