@@ -193,22 +193,22 @@ const printlabel = () => {
             print_qty +
             ",0,1,Y^XZ";
 
-        navigator.clipboard.writeText(zpl);
+        // navigator.clipboard.writeText(zpl);
 
-        // var url = "http://" + ip_addr + "/pstprnt";
-        // var method = "POST";
-        // var async = true;
-        // var request = new XMLHttpRequest();
+        var url = "http://" + ip_addr + "/pstprnt";
+        var method = "POST";
+        var async = true;
+        var request = new XMLHttpRequest();
 
-        // request.onload = function () {
-        //     var status = request.status;
-        //     var data = request.responseText;
-        //     output.innerHTML = "Status: " + status + "<br>" + data;
-        // };
+        request.onload = function () {
+            var status = request.status;
+            var data = request.responseText;
+            output.innerHTML = "Status: " + status + "<br>" + data;
+        };
 
-        // request.open(method, url, async);
+        request.open(method, url, async);
 
-        // request.send(zpl);
+        request.send(zpl);
     }
 
     if (Uncrating_Instructions) {
