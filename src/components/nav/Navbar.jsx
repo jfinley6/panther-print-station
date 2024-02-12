@@ -19,7 +19,6 @@ function Navbar() {
         height: 0,
     });
 
-    console.log(size.width);
     useEffect(() => {
         const handleResize = () => {
             setSize({
