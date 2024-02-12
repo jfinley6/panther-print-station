@@ -3,14 +3,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (let i = 1; i <= 2; i++) {
         document.getElementById(`add-option${i}`).addEventListener(
-            "input",
+            "keyup",
             () => {
-                if (document.getElementById(`additional-option-${i}-quantity`).value === "0") {
+                if (document.getElementById(`add-option${i}`).value.length > 0) {
                     document.getElementById(`additional-option-${i}-quantity`).value = 1;
                 }
             },
             { once: true }
         );
+    }
+
+    for (let i = 1; i <= 2; i++) {
+        document.getElementById(`add-option${i}`).addEventListener("keyup", () => {
+            if (document.getElementById(`add-option${i}`).value.length === 0) {
+                document.getElementById(`additional-option-${i}-quantity`).value = 0;
+                document.getElementById(`add-option${i}`).addEventListener(
+                    "keyup",
+                    () => {
+                        if (document.getElementById(`add-option${i}`).value.length > 0) {
+                            document.getElementById(`additional-option-${i}-quantity`).value = 1;
+                        }
+                    },
+                    { once: true }
+                );
+            }
+        });
     }
 });
 
@@ -25,7 +42,8 @@ const getPrinterFromLocalStorage = () => {
     const savedOption = localStorage.getItem("selectedOption") || "192.168.17.94";
 
     ipAddrInput.value = savedOption;
-}
+    document.body.classList.remove("display-none");
+};
 
 const resetForm = () => {
     document.getElementById("panther-form").reset();
@@ -175,22 +193,22 @@ const printlabel = () => {
             print_qty +
             ",0,1,Y^XZ";
 
-        navigator.clipboard.writeText(zpl);
+        // navigator.clipboard.writeText(zpl);
 
-        // var url = "http://" + ip_addr + "/pstprnt";
-        // var method = "POST";
-        // var async = true;
-        // var request = new XMLHttpRequest();
+        var url = "http://" + ip_addr + "/pstprnt";
+        var method = "POST";
+        var async = true;
+        var request = new XMLHttpRequest();
 
-        // request.onload = function () {
-        //     var status = request.status;
-        //     var data = request.responseText;
-        //     output.innerHTML = "Status: " + status + "<br>" + data;
-        // };
+        request.onload = function () {
+            var status = request.status;
+            var data = request.responseText;
+            output.innerHTML = "Status: " + status + "<br>" + data;
+        };
 
-        // request.open(method, url, async);
+        request.open(method, url, async);
 
-        // request.send(zpl);
+        request.send(zpl);
     }
 
     if (Uncrating_Instructions) {
