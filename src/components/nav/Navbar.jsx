@@ -18,6 +18,8 @@ function Navbar() {
         width: 0,
         height: 0,
     });
+
+    console.log(size.width);
     useEffect(() => {
         const handleResize = () => {
             setSize({
@@ -31,7 +33,7 @@ function Navbar() {
     }, []);
 
     useEffect(() => {
-        if (size.width > 768 && menuOpen) {
+        if (size.width > 992 && menuOpen) {
             setMenuOpen(false);
         }
     }, [size.width, menuOpen]);
@@ -64,7 +66,7 @@ function Navbar() {
             <li key={idx}>
                 <NavLink
                     onClick={() => {
-                        menuOpen && size.width < 768 ? menuToggleHandler() : "";
+                        menuOpen && size.width < 992 ? menuToggleHandler() : "";
                         localStorage.setItem("lastVisitedRoute", element.route)
                     }}
                     to={element.route}
@@ -84,7 +86,7 @@ function Navbar() {
                     </Link>
                     <nav
                         className={`${"header__content__nav"} 
-          ${menuOpen && size.width < 768 ? `${"isMenu"}` : ""} 
+          ${menuOpen && size.width < 992 ? `${"isMenu"}` : ""} 
           }`}
                     >
                         <ul>{listItemElements}</ul>
