@@ -1,0 +1,59 @@
+.bars {
+    display: block;
+    position: absolute;
+    right: 5.4375rem;
+    top: -3.125rem;
+    z-index: 1;
+    background-color: #009a76;
+    width: 2.8125rem;
+    height: 9.375rem;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    opacity: 0.8;
+}
+
+.bars:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #009a76;
+    right: -3.4375rem;
+    top: -2.75rem;
+    width: 2.8125rem;
+    height: 8.75rem;
+}
+
+.bars:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #009a76;
+    right: -6.9375rem;
+    top: -2.8125rem;
+    width: 2.8125rem;
+    height: 8.75rem;
+}
+
+@media (min-width: 992px) {
+    .bars {
+        right: 8.0625rem;
+        top: -3.75rem;
+        width: 4.0625rem;
+        height: 12.5rem;
+    }
+
+    .bars:before {
+        right: -4.9375rem;
+        top: -4.3125rem;
+        width: 4.0625rem;
+        height: 11.875rem;
+    }
+
+    .bars:after {
+        right: -9.875rem;
+        top: -4.3125rem;
+        width: 4.0625rem;
+        height: 11.875rem;
+    }
+}
