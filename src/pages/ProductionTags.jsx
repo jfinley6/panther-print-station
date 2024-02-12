@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Bars from "../components/decor/Bars";
 
 function ProductionTags() {
-  return (
-    <div>ProductionTags</div>
-  )
+    return (
+        <div className="main">
+            <Bars />
+        </div>
+    );
 }
 
-export default ProductionTags
+export default ProductionTags;

@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Bars from "../components/decor/Bars";
 
 function SerialNumbers() {
-  return (
-    <div>SerialNumbers</div>
-  )
+    return (
+        <div className="main">
+            <Bars />
+        </div>
+    );
 }
 
-export default SerialNumbers
+export default SerialNumbers;

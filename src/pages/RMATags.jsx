@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Bars from "../components/decor/Bars";
 
 function RMATags() {
-  return (
-    <div>RMATags</div>
-  )
+    return (
+        <div className="main">
+            <Bars />
+        </div>
+    );
 }
 
-export default RMATags
+export default RMATags;
