@@ -24,3 +24,7 @@ body {
     position: relative;
     height: 90vh;
 }
+
+.home {
+    height: 80vh;
+}
