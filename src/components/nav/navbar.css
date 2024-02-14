@@ -63,6 +63,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 32px;
+    gap: 20px;
     background-color: #009a76;
 }
 @media (min-width: 992px) {
@@ -84,10 +85,6 @@
     }
 }
 
-.header__content__nav ul {
-    display: flex;
-    gap: 20px;
-}
 .header__content__nav ul li a {
     text-decoration: none;
     color: inherit;
