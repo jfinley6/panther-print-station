@@ -6,6 +6,7 @@ import ProductionTags from "./pages/ProductionTags";
 import CrateTags from "./pages/CrateTags";
 import Home from "./pages/Home";
 import RMATags from "./pages/RMATags";
+import NotFound from "./pages/NotFound";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -15,6 +16,7 @@ const router = createBrowserRouter(
             <Route path="production-tags" element={<ProductionTags />} />
             <Route path="crate-tags" element={<CrateTags />} />
             <Route path="rma-tags" element={<RMATags />} />
+            <Route path="*" element={<NotFound />} />
         </Route>
     )
 );

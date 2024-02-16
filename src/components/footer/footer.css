@@ -1,0 +1,35 @@
+.footer {
+    background-image: url("https://files.pantherlabel.com/assets/dist/images/bg-pattern.png");
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn.btn-primary {
+    background: linear-gradient(to right, #ffffff 50%, #001f60 50%) right !important;
+    background-size: 200%, 100% !important;
+    background-position: right bottom !important;
+    transition: 0.3s linear !important;
+    border: none;
+    overflow: hidden;
+    color: #ffffff;
+    padding: 12px 20px;
+    letter-spacing: 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 0;
+    margin-left: 2%;
+}
+
+.btn.btn-primary:hover {
+    background-position: left bottom !important;
+    color: #001f60;
+    background-color: #fff;
+}
+
+.btn-secondary {
+    margin-right: 2% !important;
+}
