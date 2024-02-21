@@ -92,6 +92,9 @@
     font-size: 1.4rem;
     transition: width ease-in-out 0.3s;
 }
+.header__content__nav ul li a::selection {
+    background-color: transparent;
+}
 
 .header__content__nav ul li a:after {
     background: none repeat scroll 0 0 #171b60;
