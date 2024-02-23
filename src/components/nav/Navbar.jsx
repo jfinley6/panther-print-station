@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
 import { Outlet } from "react-router-dom";
 
 function Navbar() {
-    const navigate = useNavigate()
-
-    useEffect(() => {
-        const routeRedirect = localStorage.getItem("lastVisitedRoute")
-        navigate(routeRedirect)
-    }, []);
-
     const [menuOpen, setMenuOpen] = useState(false);
     const [size, setSize] = useState({
         width: 0,
@@ -66,7 +59,7 @@ function Navbar() {
                 <NavLink
                     onClick={() => {
                         menuOpen && size.width < 992 ? menuToggleHandler() : "";
-                        localStorage.setItem("lastVisitedRoute", element.route)
+                        localStorage.setItem("lastVisitedRoute", element.route);
                     }}
                     to={element.route}
                 >
@@ -80,7 +73,13 @@ function Navbar() {
         <>
             <header className="header">
                 <div className="header__content">
-                    <Link to="/" className="header__content__logo">
+                    <Link
+                        to="/"
+                        className="header__content__logo"
+                        onClick={() => {
+                            localStorage.setItem("lastVisitedRoute", "/");
+                        }}
+                    >
                         <img src="/pm-logo-panther.svg" />
                     </Link>
                     <nav

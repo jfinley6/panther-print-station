@@ -27,9 +27,12 @@
 .btn.btn-primary:hover {
     background-position: left bottom !important;
     color: #001f60;
-    background-color: #fff;
 }
 
 .btn-secondary {
     margin-right: 2% !important;
+}
+
+.btn:active {
+    color: #001f60 !important;
 }

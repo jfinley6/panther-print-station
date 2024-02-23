@@ -9,7 +9,7 @@ function PantherVideo() {
                 loop
                 muted
                 playsInline
-                src="https://files.pantherlabel.com/PantherWebsiteHeroV2.mp4"
+                src="/PantherWebsiteHeroV2.mp4"
             ></video>
         </figure>
     );
