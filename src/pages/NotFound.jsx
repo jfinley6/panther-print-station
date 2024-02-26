@@ -10,7 +10,7 @@ function NotFound() {
     useEffect(() => {
         animatedNumber > 0 && setTimeout(() => setAnimatedNumber(animatedNumber - 1), 1250);
         if (animatedNumber === 0) {
-            navigate(-1);
+            navigate("/");
         }
     }, [animatedNumber]);
 
