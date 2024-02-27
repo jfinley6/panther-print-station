@@ -12,6 +12,7 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="script.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,6 +22,7 @@
     </head>
 
     <body style="background-color: limegreen">
+        <!-- Header -->
         <div style="display: flex; align-items: center; margin-top: 20px">
             <img
                 src="file:/H:\Service Department\Production Forms\Form Files/pm-logo-panther.svg"
@@ -29,61 +31,79 @@
             <h2><em>RMA Tags</em></h2>
         </div>
 
-        <form id="panther-form">
+        <!-- Form -->
+        <form id="panther-form" onsubmit="printlabel(); return false">
             <h4>ITEM INFORMATION</h4>
             <hr />
-            <div class="form-group">
-                <label for="PartNumber">Part Number</label>
-                <input
-                    type="text"
-                    class="form-control"
-                    id="PartNumber"
-                    aria-describedby="partNumber"
-                    placeholder="Enter Part Number"
-                    autocomplete="off"
-                />
+            <div
+                style="
+                    display: grid;
+                    grid-template-columns: repeat(6, 1fr);
+                    grid-template-rows: repeat(8, auto);
+                    grid-column-gap: 10px;
+                    grid-row-gap: 10px;
+                "
+            >
+                <div style="grid-area: 1 / 2 / 3 / 4">
+                    <div class="form-group">
+                        <label for="PartNumber">Part Number</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="PartNumber"
+                            aria-describedby="partNumber"
+                            placeholder="Enter Part Number"
+                            autocomplete="off"
+                        />
+                    </div>
+                </div>
+                <div style="grid-area: 1 / 4 / 3 / 6">
+                    <div class="form-group">
+                        <label for="SerialNumber">Serial Number (If Applicable)</label>
+                        <input
+                            type="serialNumber"
+                            class="form-control"
+                            id="SerialNumber"
+                            placeholder="Enter Serial Number"
+                        />
+                    </div>
+                </div>
+                <div style="grid-area: 3 / 1 / 4 / 7">
+                    <h4>RMA INFORMATION</h4>
+                    <hr />
+                </div>
+                <div style="grid-area: 4 / 2 / 5 / 4">
+                    <div class="form-group">
+                        <label for="ReportedIssue">Reported Issue</label>
+                        <textarea
+                            class="form-control"
+                            id="ReportedIssue"
+                            aria-describedby="reportedIssue"
+                            placeholder="Enter Reported Issue"
+                            autocomplete="off"
+                        ></textarea>
+                    </div>
+                </div>
+                <div class="grid-area: 4 / 4 / 5 / 6">
+					    <div class="form-group">
+                        <label for="Initials">Initials</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="Initials"
+                            aria-describedby="initials"
+                            placeholder="Enter Initials"
+                            autocomplete="off"
+                        />
+                    </div>
+				</div>
             </div>
-            <div class="form-group">
-                <label for="SerialNumber">Serial Number (If Applicable)</label>
-                <input type="serialNumber" class="form-control" id="SerialNumber" placeholder="Enter Serial Number" />
-            </div>
-            <h4>RMA INFORMATION</h4>
-            <hr />
-            <div class="form-group">
-                <label for="ReportedIssue">Reported Issue</label>
-                <input
-                    type="text"
-                    class="form-control"
-                    id="ReportedIssue"
-                    aria-describedby="reportedIssue"
-                    placeholder="Enter Reported Issue"
-                    autocomplete="off"
-                />
-            </div>
-            <div class="form-group">
-                <label for="Initials">Initials</label>
-                <input
-                    type="text"
-                    class="form-control"
-                    id="Initials"
-                    aria-describedby="initials"
-                    placeholder="Enter Initials"
-                    autocomplete="off"
-                />
-            </div>
-            <div class="form-group">
-                <label for="todays_date">Date</label>
-                <input
-                    type="date"
-                    value=""
-                    min="2018-01-01"
-                    max=""
-                    class="form-control"
-                    id="todays_date"
-                    aria-describedby="todaysDate"
-                    placeholder="Enter Date"
-                />
-            </div>
+            <!-- 
+            
+            
+            
+            
+            
             <h4>PRINTING INFORMATION</h4>
             <hr />
             <label for="total_number">Number of Boxes</label>
@@ -107,10 +127,9 @@
             </button>
             <button style="width: 100px" type="button" class="btn btn-primary" onclick="resetForm(); return false;">
                 Reset
-            </button>
+            </button> -->
         </form>
 
         <div id="output"></div>
-
     </body>
 </html>
