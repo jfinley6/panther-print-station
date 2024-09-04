@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
+        <title>Part Tags</title>
+    </head>
+
+    <body style="background-color: limegreen" class="display-none">
+        <!-- Header -->
+        <div style="display: flex; align-items: center; margin-top: 20px; margin-bottom: 20px">
+            <img
+                src="file:/H:\Service Department\Production Forms\Form Files/pm-logo-panther.svg"
+                style="width: 400px"
+            />
+            <h2><em>Part Tags</em></h2>
+        </div>
+
+        <!-- Form -->
+        <form id="panther-form" onsubmit="printlabel(); return false;">
+            <h4>PART INFORMATION</h4>
+            <hr />
+            <div
+                style="
+                    display: grid;
+                    grid-template-columns: repeat(6, 1fr);
+                    grid-template-rows: repeat(5, auto);
+                    grid-column-gap: 10px;
+                    grid-row-gap: 10px;
+                "
+            >
+                <div style="grid-area: 1 / 2 / 3 / 4">
+                    <div class="form-group">
+                        <label for="part-number">Part Number</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="part-number"
+                            aria-describedby="partNumber"
+                            placeholder="Enter Part Number"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="part-description">Part Description</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="part-description"
+                            aria-describedby="endUser"
+                            placeholder="Enter Part Description"
+                            autocomplete="off"
+                        />
+                    </div>
+                </div>
+
+                <div style="grid-area: 1 / 4 / 3 / 6">
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="quantity"
+                            aria-describedby="quantity"
+                            value="1"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="ip_addr">Choose a Printer</label>
+                        <select
+                            class="form-select"
+                            name="ip_addr"
+                            id="ip_addr"
+                            onchange="savePrinterOption(event); return false"
+                        >
+                            <option value="192.168.17.97">Shipping</option>
+                            <option value="192.168.17.96">Crating</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="grid-area: 3 / 1 / 4 / 7">
+                    <div class="form-check">
+
+
+                        <div style="position: absolute; bottom: 0; right: 0; left: 0; text-align: center">
+                            <button type="submit" class="btn btn-primary">Print</button>
+                            <button type="button" class="btn btn-primary" onclick="resetForm(); return false;">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
