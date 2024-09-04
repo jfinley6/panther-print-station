@@ -1,6 +1,5 @@
-^XA
-^LH0,0
-^CF0,50
+^XA^LH0,0^CF0,50
 ^FO0,50^A0N,80,80^FB609,,,C ^FDPart Number\&^FS
 ^FO0,155^A0N,50,50^FB609,,,C ^FDPart Description\&^FS
+^FO0,235^A0N,35,35^FB609,,,C ^FD1 of 1\&^FS
 ^XZ
