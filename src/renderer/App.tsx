@@ -1,24 +1,26 @@
+import './styles/App.css';
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
-import icon from '../../assets/icon.svg';
-import './App.css';
-
-function Hello() {
-  return (
-    <div>
-      <div className="Hello">
-        <img width="200" alt="icon" src={icon} />
-      </div>
-      <h1>Print Station</h1>
-    </div>
-  );
-}
+import Navbar from '../layout/Navbar';
+import Home from '../renderer/pages/Home';
+import Production from './pages/Production';
 
 export default function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Hello />} />
-      </Routes>
+      <div id="wrapper">
+        <div className="left-section">
+          <Navbar />
+        </div>
+        <div className="right-section">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/toe-tag" element={<Production />} />
+            <Route path="/serial-number-tag" element={<Production />} /> /** This is a placeholder for the serial number tag page */
+            <Route path="/part-tag" element={<Production />} /> /** This is a placeholder for the part tag page */
+            <Route path="/crate-tag" element={<Production />} /> /** This is a placeholder for the crate tag page */
+          </Routes>
+        </div>
+      </div>
     </Router>
   );
 }
