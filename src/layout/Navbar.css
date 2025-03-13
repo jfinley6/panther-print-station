@@ -1,0 +1,15 @@
+.nav {
+    background: #1c2a5b;
+    padding: 0px;
+    margin: 0px;
+    width: 175px;
+    height: 100vh;
+    overflow: hidden;
+    list-style: none;
+    box-shadow: none repeat scroll 0% 0% #2b3136;
+    box-sizing: border-box;
+  }
+
+  .nav > img {
+    margin: 10px;
+  }
