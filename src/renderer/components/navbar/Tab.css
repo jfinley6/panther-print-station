@@ -1,0 +1,29 @@
+.link-styles {
+    text-decoration: none;
+    margin: 0px;
+    padding: 15px 25px;
+    width: 197px;
+    display: block;
+    font-size: 1.2em;
+    color: #fff;
+    transition-duration: 0.15s;
+}
+
+.link-styles.active {
+    background: #8891b5;
+}
+
+.link-styles:hover {
+    background: #444d71;
+    color: #fff;
+    border-left: 3px solid #069c7c;
+}
+
+.link-styles.active:hover {
+    background: #8891b5; /* Ensure the active background color remains on hover */
+    border-left: 0px;
+}
+
+span {
+    margin-right: 15px;
+}
